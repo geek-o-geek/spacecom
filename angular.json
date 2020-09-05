@@ -23,9 +23,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/style.css",
+              "src/assets/css/media.css",
+              "src/assets/css/bootstrap.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/bootstrap.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
