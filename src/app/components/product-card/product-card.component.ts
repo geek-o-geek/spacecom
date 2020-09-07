@@ -12,4 +12,8 @@ export class ProductCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  setPlaceholder(e){
+    e.target.src = "./assets/images/placeholder.png"
+  }
+
 }

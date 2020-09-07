@@ -48,6 +48,6 @@
     <div class="card_wrap" *ngFor="let item of launchArr;">
       <product-card [cardData]=item></product-card>
     </div>
-    <norecord></norecord>
+    <norecord *ngIf="launchArr?.length == 0"></norecord>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="space_card_wrap">
   <div class="space_img_wrap">
-    <img [src]="cardData?.links?.mission_patch" alt="">
+    <img [src]="cardData?.links?.mission_patch" (error)="setPlaceholder($event)" alt="">
   </div>
   <div class="space_contant_wrap">
     <h2>{{ cardData?.mission_name | titlecase }}</h2>
