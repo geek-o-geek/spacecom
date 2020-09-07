@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductCardModule } from 'src/app/modules/product-card/product-card.module';
 import { NorecordModule } from 'src/app/modules/norecord/norecord.module';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { LazyloadModule } from 'src/app/modules/lazyload/lazyload.module';
 
 @NgModule({
   declarations: [LaunchSpaceComponent],
@@ -17,7 +18,8 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     HttpClientModule,
     ProductCardModule,
     NorecordModule,
-    SharedModule
+    SharedModule,
+    LazyloadModule
   ],
   providers: [LaunchSpaceService]
 })

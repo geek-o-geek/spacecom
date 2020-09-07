@@ -45,8 +45,8 @@
 </div>
 <div class="right_panel_details_wrap">
   <div class="packege_wrap">
-    <div class="card_wrap" *ngFor="let item of launchArr;">
-      <product-card [cardData]=item></product-card>
+    <div class="card_wrap"  *ngFor="let item of launchArr;">
+      <product-card lazyloadContent [cardData]=item></product-card>
     </div>
     <norecord *ngIf="launchArr?.length == 0"></norecord>
   </div>
