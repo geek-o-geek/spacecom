@@ -7,6 +7,7 @@ import { LaunchSpaceService } from './launch-space.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCardModule } from 'src/app/modules/product-card/product-card.module';
 import { NorecordModule } from 'src/app/modules/norecord/norecord.module';
+import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 @NgModule({
   declarations: [LaunchSpaceComponent],
@@ -15,7 +16,8 @@ import { NorecordModule } from 'src/app/modules/norecord/norecord.module';
     LaunchSpaceRoutingModule,
     HttpClientModule,
     ProductCardModule,
-    NorecordModule
+    NorecordModule,
+    SharedModule
   ],
   providers: [LaunchSpaceService]
 })

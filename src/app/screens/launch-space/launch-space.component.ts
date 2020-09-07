@@ -10,8 +10,10 @@ import { take } from 'rxjs/operators';
 export class LaunchSpaceComponent implements OnInit {
   launchArr: Array<any> = [];
   launchServices$: any;
-  years: Array<number> = [];
-  filterObj: object
+  years: Array<object> = [];
+  filterObj: object;
+  isLandSuccess: boolean;
+  isLaunchSuccess: boolean;
   constructor(private launchServices: LaunchSpaceService) { }
 
   ngOnInit() {
@@ -19,7 +21,7 @@ export class LaunchSpaceComponent implements OnInit {
     let currentIteration = fullYear;
 
     for(;fullYear - currentIteration <= 15; currentIteration--)
-      this.years.push(currentIteration);
+      this.years.push({value: currentIteration, isSelected: false});
 
     this.years.reverse();
     this.setInitialFilter();
@@ -34,12 +36,24 @@ export class LaunchSpaceComponent implements OnInit {
   }
 
   setInitialFilter(){
+    this.isLandSuccess = undefined
+    this.isLaunchSuccess = undefined
+
+    for (var i = 0; i < this.years.length; i++) {
+      this.years[i]['isSelected'] = false;
+    }
     this.filterObj = { limit: 100 }
     this.launchProgramList()
   }
 
   filters(obj){
     const { type, value } = obj;
+
+    if(type == "launch_success")
+      this.isLaunchSuccess = value
+    
+    if(type == "land_success")
+      this.isLandSuccess = value  
 
     this.filterObj[type] = value;
     this.launchProgramList()

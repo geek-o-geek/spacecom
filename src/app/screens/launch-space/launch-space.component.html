@@ -5,9 +5,9 @@
       <h2>Launch Year</h2>
     </div>
     <div class="radio-toolbar row">
-      <div class="col-md-6 col-sm-6 col-xs-6" *ngFor="let year of years">
-        <input type="radio" id="radio_{{year}}" (change)="filters({type: 'launch_year', value: year})" name="radios" [value]="year">
-        <label for="radio_{{year}}">{{ year }}</label>
+      <div class="col-md-6 col-sm-6 col-xs-6" *ngFor="let ob of years">
+        <input type="radio" id="radio_{{ob.value}}" [(ngModel)]="ob.isSelected" (change)="filters({type: 'launch_year', value: ob.value})" name="radios" [value]="ob.value">
+        <label for="radio_{{ob.value}}">{{ ob.value }}</label>
       </div>
     </div>
   </div>
@@ -17,11 +17,11 @@
     </div>
     <div class="radio-toolbar row">
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <input type="radio" id="radio_true1" (change)="filters({type: 'launch_success', value: true})" name="launch" value="true">
+        <input type="radio" id="radio_true1" [checked]="isLaunchSuccess == true" (change)="filters({type: 'launch_success', value: true})" name="launch" value="true">
         <label for="radio_true1">True</label>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <input type="radio" id="radio_true2" name="launch" (change)="filters({type: 'launch_success', value: false})" value="false">
+        <input type="radio" id="radio_true2" [checked]="isLaunchSuccess == false" name="launch" (change)="filters({type: 'launch_success', value: false})" value="false">
         <label for="radio_true2">False</label>
       </div>
     </div>
@@ -32,11 +32,11 @@
     </div>
     <div class="radio-toolbar row">
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <input type="radio" id="radio_true3" name="landing" (change)="filters({type: 'land_success', value: true})" value="true">
+        <input type="radio" id="radio_true3" [checked]="isLandSuccess == true" name="landing" (change)="filters({type: 'land_success', value: true})" value="true">
         <label for="radio_true3">True</label>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <input type="radio" id="radio_false4" name="landing" (change)="filters({type: 'land_success', value: true})" value="false">
+        <input type="radio" id="radio_false4" [checked]="isLandSuccess == false" name="landing" (change)="filters({type: 'land_success', value: false})" value="false">
         <label for="radio_false4">False</label>
       </div>
     </div>
