@@ -42,7 +42,7 @@ export class LaunchSpaceComponent implements OnInit {
     for (var i = 0; i < this.years.length; i++) {
       this.years[i]['isSelected'] = false;
     }
-    this.filterObj = { limit: 100 }
+    this.filterObj = { limit: 50 }
     this.launchProgramList()
   }
 
