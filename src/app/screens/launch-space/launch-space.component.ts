@@ -34,7 +34,7 @@ export class LaunchSpaceComponent implements OnInit {
   }
 
   setInitialFilter(){
-    this.filterObj = { limit: 10 }
+    this.filterObj = { limit: 100 }
     this.launchProgramList()
   }
 
