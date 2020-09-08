@@ -1,4 +1,4 @@
-<div class="left_panel_wrap">
+<div class="left_panel_wrap sidebar">
   <p>Filters</p>
   <div class="year_data_wrap">
     <div class="lauch_heading">
@@ -43,11 +43,13 @@
   </div>
   <button (click)="setInitialFilter();">Reset All</button>
 </div>
-<div class="right_panel_details_wrap">
-  <div class="packege_wrap">
-    <div class="card_wrap"  *ngFor="let item of launchArr;">
-      <product-card lazyloadContent [cardData]=item></product-card>
+<div class="right_panel_details_wrap content">
+  <ng-container>
+    <div class="packege_wrap info">
+      <div class="card_wrap"  *ngFor="let item of launchArr;">
+        <product-card lazyloadContent [cardData]=item></product-card>
+      </div>
+      <norecord *ngIf="launchArr?.length == 0;"></norecord>
     </div>
-    <norecord *ngIf="launchArr?.length == 0"></norecord>
-  </div>
+  </ng-container>
 </div>

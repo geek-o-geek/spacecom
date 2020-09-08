@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  showSpinner: boolean = false;
+  constructor(private spinnerService: LoadingService, private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.init()
+  }
+
+  init() {
+    console.log("init called...")
+    this.spinnerService.getSpinnerObserver()
+    .subscribe((status) => {
+      console.log(status, "status")
+      this.showSpinner = (status === 'start');
+      this.cdRef.detectChanges();
+    });
   }
 
 }

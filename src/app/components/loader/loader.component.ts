@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'loader',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loader.component.css']
 })
 export class LoaderComponent implements OnInit {
+  @Input() showSpinner: any;
+  constructor() {
 
-  constructor() { }
+  }
 
-  ngOnInit() {
+  ngOnInit(){
+
   }
 
 }

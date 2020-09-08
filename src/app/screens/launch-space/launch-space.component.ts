@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LaunchSpaceService } from './launch-space.service';
 import { take } from 'rxjs/operators';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 
 @Component({
   selector: 'app-launch-space',
@@ -14,7 +15,9 @@ export class LaunchSpaceComponent implements OnInit {
   filterObj: object;
   isLandSuccess: boolean;
   isLaunchSuccess: boolean;
-  constructor(private launchServices: LaunchSpaceService) { }
+  constructor(
+    private loadingService: LoadingService,
+    private launchServices: LaunchSpaceService) { }
 
   ngOnInit() {
     let fullYear = +(new Date().getFullYear());
